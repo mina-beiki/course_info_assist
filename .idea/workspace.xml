@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="bf7065b4-8fd6-4c76-b52e-07791dfca06f" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin File" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="2BzMn4ur4yDTRyqAg6hWKwMHZ4a" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="settings.editor.selected.configurable" value="project.propCompiler" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="MainKt" />
+      <module name="studo-project" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bf7065b4-8fd6-4c76-b52e-07791dfca06f" name="Default Changelist" comment="" />
+      <created>1657904623212</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1657904623212</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="184" y="112" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1657962161923">
+      <screen x="0" y="0" width="1440" height="838" />
+    </state>
+    <state x="184" y="112" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.838@0.0.1440.838" timestamp="1657962161923" />
+    <state x="457" y="241" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1657962160835">
+      <screen x="0" y="0" width="1440" height="838" />
+    </state>
+    <state x="457" y="241" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1440.838@0.0.1440.838" timestamp="1657962160835" />
+    <state width="1398" height="245" key="GridCell.Tab.0.bottom" timestamp="1657962602624">
+      <screen x="0" y="0" width="1440" height="838" />
+    </state>
+    <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.0.1440.838@0.0.1440.838" timestamp="1657962602624" />
+    <state width="1398" height="245" key="GridCell.Tab.0.center" timestamp="1657962602622">
+      <screen x="0" y="0" width="1440" height="838" />
+    </state>
+    <state width="1398" height="245" key="GridCell.Tab.0.center/0.0.1440.838@0.0.1440.838" timestamp="1657962602622" />
+    <state width="1398" height="245" key="GridCell.Tab.0.left" timestamp="1657962602620">
+      <screen x="0" y="0" width="1440" height="838" />
+    </state>
+    <state width="1398" height="245" key="GridCell.Tab.0.left/0.0.1440.838@0.0.1440.838" timestamp="1657962602620" />
+    <state width="1398" height="245" key="GridCell.Tab.0.right" timestamp="1657962602623">
+      <screen x="0" y="0" width="1440" height="838" />
+    </state>
+    <state width="1398" height="245" key="GridCell.Tab.0.right/0.0.1440.838@0.0.1440.838" timestamp="1657962602623" />
+  </component>
+</project>
