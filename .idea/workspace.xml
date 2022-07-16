@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bf7065b4-8fd6-4c76-b52e-07791dfca06f" name="Default Changelist" comment="" />
+    <list default="true" id="bf7065b4-8fd6-4c76-b52e-07791dfca06f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.kt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,14 +18,26 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="2BzMn4ur4yDTRyqAg6hWKwMHZ4a" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="true" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="project.propCompiler" />
   </component>
   <component name="RunManager">
@@ -55,21 +71,33 @@
       <screen x="0" y="0" width="1440" height="838" />
     </state>
     <state x="457" y="241" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1440.838@0.0.1440.838" timestamp="1657962160835" />
-    <state width="1398" height="245" key="GridCell.Tab.0.bottom" timestamp="1657962602624">
-      <screen x="0" y="0" width="1440" height="838" />
+    <state width="1398" height="422" key="GridCell.Tab.0.bottom" timestamp="1657968491063">
+      <screen x="0" y="0" width="1440" height="840" />
     </state>
     <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.0.1440.838@0.0.1440.838" timestamp="1657962602624" />
-    <state width="1398" height="245" key="GridCell.Tab.0.center" timestamp="1657962602622">
-      <screen x="0" y="0" width="1440" height="838" />
+    <state width="1398" height="422" key="GridCell.Tab.0.bottom/0.0.1440.840@0.0.1440.840" timestamp="1657968491063" />
+    <state width="1398" height="422" key="GridCell.Tab.0.center" timestamp="1657968491061">
+      <screen x="0" y="0" width="1440" height="840" />
     </state>
     <state width="1398" height="245" key="GridCell.Tab.0.center/0.0.1440.838@0.0.1440.838" timestamp="1657962602622" />
-    <state width="1398" height="245" key="GridCell.Tab.0.left" timestamp="1657962602620">
-      <screen x="0" y="0" width="1440" height="838" />
+    <state width="1398" height="422" key="GridCell.Tab.0.center/0.0.1440.840@0.0.1440.840" timestamp="1657968491061" />
+    <state width="1398" height="422" key="GridCell.Tab.0.left" timestamp="1657968491060">
+      <screen x="0" y="0" width="1440" height="840" />
     </state>
     <state width="1398" height="245" key="GridCell.Tab.0.left/0.0.1440.838@0.0.1440.838" timestamp="1657962602620" />
-    <state width="1398" height="245" key="GridCell.Tab.0.right" timestamp="1657962602623">
-      <screen x="0" y="0" width="1440" height="838" />
+    <state width="1398" height="422" key="GridCell.Tab.0.left/0.0.1440.840@0.0.1440.840" timestamp="1657968491060" />
+    <state width="1398" height="422" key="GridCell.Tab.0.right" timestamp="1657968491062">
+      <screen x="0" y="0" width="1440" height="840" />
     </state>
     <state width="1398" height="245" key="GridCell.Tab.0.right/0.0.1440.838@0.0.1440.838" timestamp="1657962602623" />
+    <state width="1398" height="422" key="GridCell.Tab.0.right/0.0.1440.840@0.0.1440.840" timestamp="1657968491062" />
+    <state x="208" y="3" key="SettingsEditor" timestamp="1657968417388">
+      <screen x="0" y="0" width="1440" height="840" />
+    </state>
+    <state x="208" y="3" key="SettingsEditor/0.0.1440.840@0.0.1440.840" timestamp="1657968417388" />
+    <state x="432" y="322" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1657968396185">
+      <screen x="0" y="0" width="1440" height="840" />
+    </state>
+    <state x="432" y="322" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1440.840@0.0.1440.840" timestamp="1657968396185" />
   </component>
 </project>
