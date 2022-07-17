@@ -1,7 +1,9 @@
 import org.jsoup.Jsoup
+import org.jsoup.nodes.Element
 import org.jsoup.select.Elements
 import java.util.*
 import kotlin.collections.ArrayList
+import kotlin.system.exitProcess
 
 
 fun main() {
@@ -17,6 +19,7 @@ fun main() {
         doc = Jsoup.connect("https://ufind.univie.ac.at/en/vvz.html").userAgent("Firefox").get()
     } catch (e: Exception) {
         println("Network error occurred! Try again.")
+        exitProcess(-1)
     }
 
     println("Successfully connected!")
@@ -30,12 +33,11 @@ fun main() {
     }
     var ctr: Int = 0
     for (str in fields) {
-        if(ctr<36)
+        if (ctr < 36)
             println("$ctr - $str")
-        else if(ctr==45 || ctr==6){
+        else if (ctr == 45 || ctr == 6) {
             println("$ctr - $str")
-        }
-        else {
+        } else {
             val trimmedStr: String = str.substring(5, str.length)
             println("$ctr - $trimmedStr")
         }
@@ -46,9 +48,23 @@ fun main() {
     //choose field:
     println()
     println("Choose your field: (Enter index number)")
-    val fieldNumber:Int = scanner.nextInt()
+    val fieldNumber: Int = scanner.nextInt()
+    val fieldName: String = fields.get(fieldNumber)
+
+    println("Field name chosen = $fieldName")
+
+    //find th study program element:
+    val studyPrograms: Elements = doc.select(":containsOwn($fieldName)")
+    val studyProgram: Element = studyPrograms[0]
+    val siblings = studyProgram.parent()?.siblingElements()
+    if (siblings != null) {
+        for(e in siblings){
+            println(e.text())
+        }
+    }
 
 
 
-    print(doc.body())
+
+    //print(doc.body())
 }
