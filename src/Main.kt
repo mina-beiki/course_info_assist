@@ -51,19 +51,22 @@ fun main() {
     val fieldNumber: Int = scanner.nextInt()
     val fieldName: String = fields.get(fieldNumber)
 
-    println("Field name chosen = $fieldName")
+    println("$fieldName's study programs:")
 
     //find th study program element:
     val studyPrograms: Elements = doc.select(":containsOwn($fieldName)")
     val studyProgram: Element = studyPrograms[0]
     val siblings = studyProgram.parent()?.siblingElements()
+    var sProgram: StudyProgram
     if (siblings != null) {
-        for(e in siblings){
+        for (e in siblings) {
             println(e.text())
+            //println(e.children()[0].attr("abs:href"))
+            sProgram = StudyProgram(e.text(),e.children()[0].attr("abs:href"))
         }
     }
 
-
+    //choose course:
 
 
     //print(doc.body())
