@@ -1,15 +1,12 @@
-import org.jsoup.Connection
 import org.jsoup.Jsoup
 import org.jsoup.select.Elements
-import java.io.IOException
 import java.util.*
-import javax.swing.text.Document
 import kotlin.collections.ArrayList
-import kotlin.reflect.jvm.internal.impl.load.kotlin.JvmType
 
 
 fun main() {
 
+    val scanner = Scanner(System.`in`)
     println("Welcome to your Course Assistant!")
     var doc: org.jsoup.nodes.Document = Jsoup.parse("https://www.google.com/")
     println("Connecting ...")
@@ -24,6 +21,7 @@ fun main() {
 
     println("Successfully connected!")
     println()
+
     //find all study programs:
     val fieldsElements: Elements = doc.select("h2.icon-usse-info")
     val fields = ArrayList<String>()
@@ -32,15 +30,25 @@ fun main() {
     }
     var ctr: Int = 0
     for (str in fields) {
-        if (ctr < 36)
+        if(ctr<36)
             println("$ctr - $str")
-        else if (ctr == 45 || ctr == 46)
-            println("${ctr+3} - $str")
-        else
-            println(str)
-        ctr++;
+        else if(ctr==45 || ctr==6){
+            println("$ctr - $str")
+        }
+        else {
+            val trimmedStr: String = str.substring(5, str.length)
+            println("$ctr - $trimmedStr")
+        }
+
+        ctr++
     }
 
+    //choose field:
+    println()
+    println("Choose your field: (Enter index number)")
+    val fieldNumber:Int = scanner.nextInt()
 
-    //print(doc.body())
+
+
+    print(doc.body())
 }
