@@ -113,12 +113,12 @@ fun main() {
         }
     }
 
-    println(courses.size)
+    //println(courses.size)
     ctr = 0
     for(e in courses){
         println("$ctr - ${e.text()}")
         //println(e.children().select("a.what").attr("abs:href"))
-        var c: Course = Course(e.text(),e.children().select("a.what").attr("abs:href"))
+        val c: Course = Course(e.text(),e.children().select("a.what").attr("abs:href"))
         coursesList.add(c)
         ctr ++
     }
@@ -127,9 +127,46 @@ fun main() {
     //choose course:
 
     println()
-    print(doc.body())
-    //println()
-    //println("Choose your course:")
+    println("Choose your course: (Enter index number)")
+    val courseNumber: Int = scanner.nextInt()
+    var course: Course = sProgramList.get(sProgramNumber).courses.get(courseNumber)
+    println("Chosen course's name = ${course.courseLink}")
+    println("Chosen course's link = ${course.courseName}")
+    //print(doc.body())
 
+    println()
+    println("Loading events ...")
+    try {
+        doc = Jsoup.connect(course.courseLink).userAgent("Firefox").get()
+    } catch (e: Exception) {
+        println("Network error occurred! Try again.")
+        exitProcess(-1)
+    }
+
+    println("Successfully loaded!")
+
+
+    //print events:
+    val eventsParent: Elements = doc.select("div.usse-id-group")
+    val children: Elements = eventsParent[0].children()
+    var events: ArrayList<String> = ArrayList()
+
+
+    for(e in children){
+        if(e.getElementsByClass("event line future").size>0 || e.getElementsByClass("event line next").size>0){
+            for(e2 in e.getElementsByClass("event line next")){
+                events.add(e2.text())
+            }
+            for(e2 in e.getElementsByClass("event line future")) {
+                events.add(e2.text())
+            }
+        }
+    }
+
+    for(eventStr in events){
+        println(eventStr)
+    }
+
+    //println(doc.body())
 
 }
