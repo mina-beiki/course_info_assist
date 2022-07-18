@@ -57,17 +57,44 @@ fun main() {
     val studyPrograms: Elements = doc.select(":containsOwn($fieldName)")
     val studyProgram: Element = studyPrograms[0]
     val siblings = studyProgram.parent()?.siblingElements()
-    var sProgram: StudyProgram
+
+    var sProgramList: ArrayList<StudyProgram> = ArrayList()
+    ctr = 0
     if (siblings != null) {
         for (e in siblings) {
-            println(e.text())
+            println("$ctr - ${e.text()}")
             //println(e.children()[0].attr("abs:href"))
-            sProgram = StudyProgram(e.text(),e.children()[0].attr("abs:href"))
+            val sProgram = StudyProgram(e.text(),e.children()[0].attr("abs:href"))
+            sProgramList.add(sProgram)
+            ctr ++
         }
     }
 
     //choose course:
+    println("Choose your study program: (Enter index number)")
+    val sProgramNumber: Int = scanner.nextInt()
+    println("Chosen study program = ${sProgramList.get(sProgramNumber).studyProgramName}")
+    println(sProgramList.get(sProgramNumber).studyProgramLink)
 
+    println("Loading ...")
+    try {
+        doc = Jsoup.connect(sProgramList.get(sProgramNumber).studyProgramLink).userAgent("Firefox").get()
+    } catch (e: Exception) {
+        println("Network error occurred! Try again.")
+        exitProcess(-1)
+    }
 
+    println("Successfully loaded!")
+    println()
+    //list courses:
+    var courses: Elements = doc.getElementsByClass("list course level2")
+    for(e in doc.getElementsByClass("list course level3")){
+        courses.add(e)
+    }
+    println(courses.size)
+    ctr = 0
+    for(e in courses){
+        println("$ctr - ${e.text()}")
+    }
     //print(doc.body())
 }
