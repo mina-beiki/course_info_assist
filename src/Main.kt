@@ -113,6 +113,11 @@ fun main() {
         }
     }
 
+    if(courses.size==0){
+        println("There are no courses for this study program!")
+        exitProcess(-1)
+    }
+
     //println(courses.size)
     ctr = 0
     for(e in courses){
@@ -163,9 +168,15 @@ fun main() {
         }
     }
 
+    if(events.size==0){
+        println("Currently no class schedule is known!")
+        exitProcess(-1)
+    }
+
     for(eventStr in events){
         println(eventStr)
     }
+
 
     //println(doc.body())
 
