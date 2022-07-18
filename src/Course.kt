@@ -1,9 +1,5 @@
-class Course( name: String, link: String){
-    private var courseName: String
-    private var courseLink: String
+class Course(name: String, link: String) {
+    var courseName: String = name
+    var courseLink: String = link
 
-    init{
-        courseName = name
-        courseLink = link
-    }
 }

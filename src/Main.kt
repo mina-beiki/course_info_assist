@@ -87,14 +87,49 @@ fun main() {
     println("Successfully loaded!")
     println()
     //list courses:
-    var courses: Elements = doc.getElementsByClass("list course level2")
-    for(e in doc.getElementsByClass("list course level3")){
-        courses.add(e)
+
+
+    var courses: Elements  = doc.getElementsByClass("list course level2")
+    var coursesList : ArrayList<Course> = ArrayList()
+
+    if(doc.getElementsByClass("list course level4").size != 0){
+        for(e in doc.getElementsByClass("list course level4")){
+            courses.add(e)
+        }
     }
+    if(doc.getElementsByClass("list course level3").size != 0){
+        for(e in doc.getElementsByClass("list course level3")){
+            courses.add(e)
+        }
+    }
+    if(doc.getElementsByClass("list course level2").size != 0){
+        for(e in doc.getElementsByClass("list course level2")){
+            courses.add(e)
+        }
+    }
+    if(doc.getElementsByClass("list course level1").size != 0){
+        for(e in doc.getElementsByClass("list course level1")){
+            courses.add(e)
+        }
+    }
+
     println(courses.size)
     ctr = 0
     for(e in courses){
         println("$ctr - ${e.text()}")
+        //println(e.children().select("a.what").attr("abs:href"))
+        var c: Course = Course(e.text(),e.children().select("a.what").attr("abs:href"))
+        coursesList.add(c)
+        ctr ++
     }
-    //print(doc.body())
+    sProgramList.get(sProgramNumber).setCoursesList(coursesList)
+
+    //choose course:
+
+    println()
+    print(doc.body())
+    //println()
+    //println("Choose your course:")
+
+
 }
