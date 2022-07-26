@@ -85,7 +85,7 @@ fun main() {
     val index: Int = scanner.nextInt()
 
 
-    println("Loading ...")
+
     try {
         doc = Jsoup.connect(sProgramList.get(sProgramNumber).studyProgramLink).userAgent("Firefox").get()
     } catch (e: Exception) {
@@ -198,7 +198,8 @@ fun main() {
         sProgramList.get(sProgramNumber).setCoursesList(coursesList)
 
         var threadsCtr: Int = 0
-        //println(coursesList.size)
+
+
         for (c in coursesList) {
             Thread(Runnable {
                 try {
@@ -206,22 +207,42 @@ fun main() {
                 } catch (e: Exception) {
                     c.setEventString("")
                 }
-                //println(c.courseLink)
                 val children: Elements = doc.select("div.usse-id-courselong")[0].children()
                 for (e in children) {
                     if (e.getElementsByClass("summary groups").size > 0) {
-                        c.setEventString(e.getElementsByClass("summary groups")[0].text())
-                        if(e.getElementsByClass("summary groups")[0].text().length>0 && e.getElementsByClass("summary groups")[0].text().length<120) {
-                            println(e.getElementsByClass("summary groups")[0].text())
+
+                        val strSize: Int = e.getElementsByClass("summary groups")[0].text().length
+
+                        if (strSize == 0 || strSize > 500) {
+                            c.setEventString("")
+                        } else {
+                            c.setEventString(e.getElementsByClass("summary groups")[0].text())
                         }
-                        //c.generateDate()
+                        //some of them have size 0
+
+                        c.generateDate()
                         break
                     }
                 }
                 threadsCtr++
-                //print("$threadsCtr ")
             }).start()
         }
+
+        while (threadsCtr != coursesList.size) {
+            print("Loading")
+            Thread.sleep(1000) // Just to give the user a chance to see "hello".
+            print("\b\b\b\b\b\b\b")
+        }
+        println()
+
+        //when threads are completed:
+        println("Loaded all events successfully!")
+
+        for(c in coursesList){
+            println(c.date)
+            println(c.time)
+        }
+
 
     }
 
