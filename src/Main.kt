@@ -1,6 +1,8 @@
 import org.jsoup.Jsoup
 import org.jsoup.nodes.Element
 import org.jsoup.select.Elements
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
 import java.util.*
 import kotlin.collections.ArrayList
 import kotlin.system.exitProcess
@@ -229,19 +231,44 @@ fun main() {
         }
 
         while (threadsCtr != coursesList.size) {
-            print("Loading")
-            Thread.sleep(1000) // Just to give the user a chance to see "hello".
-            print("\b\b\b\b\b\b\b")
+            println(threadsCtr)
+            println(coursesList.size)
+            //print("Loading")
+            //Thread.sleep(1000) // Just to give the user a chance to see "hello".
+            //print("\b\b\b\b\b\b\b")
         }
         println()
 
         //when threads are completed:
         println("Loaded all events successfully!")
 
-        for(c in coursesList){
-            println(c.date)
-            println(c.time)
+
+        var datesList: ArrayList<String> = ArrayList()
+
+        for (c in coursesList) {
+            if (c.date.length > 0) {
+                datesList.add(c.date)
+            }
         }
+
+        val dateTimeFormatter: DateTimeFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy")
+
+        val result = datesList.sortedByDescending {
+            LocalDate.parse(it, dateTimeFormatter)
+        }
+
+
+        if(result.size >= 10){
+            for (i in 9 downTo 0) {
+                println(result[i])
+            }
+        }else{
+            for (i in result.size-1 downTo 0) {
+                println(result[i])
+            }
+        }
+
+
 
 
     }
