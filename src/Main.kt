@@ -231,13 +231,10 @@ fun main() {
         }
 
         while (threadsCtr != coursesList.size) {
-            println(threadsCtr)
-            println(coursesList.size)
-            //print("Loading")
-            //Thread.sleep(1000) // Just to give the user a chance to see "hello".
-            //print("\b\b\b\b\b\b\b")
+            print("$threadsCtr out of ${coursesList.size} loaded")
+            Thread.sleep(1000)
+            print("\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b")
         }
-        println()
 
         //when threads are completed:
         println("Loaded all events successfully!")
@@ -245,30 +242,33 @@ fun main() {
 
         var datesList: ArrayList<String> = ArrayList()
 
-        for (c in coursesList) {
-            if (c.date.length > 0) {
-                datesList.add(c.date)
+        if (coursesList.size == 0) {
+            println("No upcoming events!")
+        } else {
+            for (c in coursesList) {
+                if (c.date.length > 0) {
+                    datesList.add(c.date)
+                }
+            }
+
+
+            val dateTimeFormatter: DateTimeFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy")
+
+            val result = datesList.sortedByDescending {
+                LocalDate.parse(it, dateTimeFormatter)
+            }
+
+
+            if (result.size >= 10) {
+                for (i in 9 downTo 0) {
+                    println(result[i])
+                }
+            } else {
+                for (i in result.size - 1 downTo 0) {
+                    println(result[i])
+                }
             }
         }
-
-        val dateTimeFormatter: DateTimeFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy")
-
-        val result = datesList.sortedByDescending {
-            LocalDate.parse(it, dateTimeFormatter)
-        }
-
-
-        if(result.size >= 10){
-            for (i in 9 downTo 0) {
-                println(result[i])
-            }
-        }else{
-            for (i in result.size-1 downTo 0) {
-                println(result[i])
-            }
-        }
-
-
 
 
     }
